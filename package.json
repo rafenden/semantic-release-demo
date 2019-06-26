@@ -6,7 +6,6 @@
   "private": false,
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^6.2.0",
-    "@semantic-release/github": "^5.4.0",
     "semantic-release": "^15.13.18",
     "semantic-release-cli": "^5.1.1"
   },
