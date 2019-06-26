@@ -1,0 +1,25 @@
+{
+  "name": "semantic-release-demo",
+  "version": "0.0.0-development",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^6.2.0",
+    "@semantic-release/github": "^5.4.0",
+    "semantic-release": "^15.13.18",
+    "semantic-release-cli": "^5.1.1"
+  },
+  "scripts": {
+    "test": "exit 0",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafenden/semantic-release-demo.git"
+  },
+  "release": {
+    "branch": "master",
+    "npmPublish": false
+  }
+}
