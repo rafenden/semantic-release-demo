@@ -1,30 +1,15 @@
-version: 2
-jobs:
-  test_and_release:
-    docker:
-      - image: circleci/node:10.16.0
-    steps:
-      - checkout
+# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
+version: 2.1
 
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+# Use a package of configuration called an orb, see https://circleci.com/docs/2.0/orb-intro/
+orbs:
+  # Declare a dependency on the welcome-orb
+  welcome: circleci/welcome-orb@0.3.1
 
-      - run: yarn install --pure-lockfile
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      # tests
-      - run: yarn test
-
-      # release
-      - run: yarn release
-
+# Orchestrate or schedule a set of jobs, see https://circleci.com/docs/2.0/workflows/
 workflows:
-  version: 2
-  build:
+  # Name the workflow "Welcome"
+  Welcome:
+    # Run the welcome/run job in its own container
     jobs:
-      - test_and_release
+      - welcome/run
