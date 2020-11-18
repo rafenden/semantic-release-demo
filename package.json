@@ -7,7 +7,7 @@
   "devDependencies": {
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
-    "semantic-release": "^15.13.18"
+    "semantic-release": "^17.2.3"
   },
   "scripts": {
     "test": "exit 0",
